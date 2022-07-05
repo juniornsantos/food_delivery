@@ -19,7 +19,7 @@ class SmallText extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-        fontFamily: 'Roboto', //baixar a fonte roboto 30:20min
+        fontFamily: 'Robooto', //baixar a fonte roboto 30:20min
         color: color,
         fontSize: size,
         height: height
