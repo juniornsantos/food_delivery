@@ -61,7 +61,40 @@ class _FoodPageBodyState extends State<FoodPageBody> {
             activeSize: const Size(18.0, 9.0),
             activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
           ),
-        )        
+        ),
+
+        //polular text
+        SizedBox( height: Dimensions.height30,),        
+        
+        Container(
+          margin: EdgeInsets.only(left: Dimensions.width30),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              BigText(text: "Popular"), 
+              SizedBox(width: Dimensions.width10,),
+              Container(
+                //deixando o ponto quase no centro dos dois textos
+                margin: const EdgeInsets.only(bottom: 3),
+                child: BigText(text: ".", color: Colors.black26),
+              ),
+              SizedBox(width: Dimensions.width10,),
+              Container(
+                //deixando o nome um pouquinho acima do ponto
+                margin: const EdgeInsets.only(bottom: 2),
+                child: SmallText(text: "Food Pairing",),
+              )
+            ],
+
+          ),
+        )
+        //Lista com as cominas e mas imagens
+        ListView.builder(
+          itemCount:10 ,
+          itemBuilder: (context, index){
+
+        })
+
       ],
     );
   }
