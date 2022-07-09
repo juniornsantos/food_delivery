@@ -36,7 +36,11 @@ class Dimensions {
   //tamanho do icone de pesquisa (search)
 
   static double iconSize24 = screenHeight/35.17;
+
+  // tamanhos do listview - 390 largura do iphone 12
   
+  static double listViewImgSize = screenWidth/3.25;
+  static double listViewTextContSize = screenWidth/3.9;
 
 }
 
