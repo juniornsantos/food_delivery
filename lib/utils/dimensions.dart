@@ -42,6 +42,12 @@ class Dimensions {
   static double listViewImgSize = screenWidth/3.25;
   static double listViewTextContSize = screenWidth/3.9;
 
+
+  // Dimensoes da tela popular_food_detail
+  
+
 }
 
-// parei no tempo 2:21:37
+// Dimensoes da tela popular_food_detail
+
+// parei no tempo 3:17:56 
