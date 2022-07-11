@@ -15,6 +15,7 @@ class PopularFoodDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
           Positioned(
@@ -62,12 +63,61 @@ class PopularFoodDetail extends StatelessWidget {
                 ),
                 color: Colors.white
               ),
-              child: AppColumn(text:"Comida Chinesa"),
-
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  AppColumn(text:"Comida Chinesa"),
+                  SizedBox(height: Dimensions.height20,),
+                  BigText(text: "Introdução")
+                ],
+              ),
             )
           )
         ],
       ),
+
+      bottomNavigationBar: Container(
+        height: 120,
+        padding: EdgeInsets.only(top: Dimensions.height30, bottom: Dimensions.height30, left: Dimensions.width20, right: Dimensions.width20),
+        decoration: BoxDecoration(
+          color: AppColors.buttonBackgroudColor,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(Dimensions.radius20*2),
+            topRight: Radius.circular(Dimensions.radius20*2)
+          )
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              padding: EdgeInsets.only(top: Dimensions.radius20, bottom: Dimensions.height20, left:Dimensions.width20, right: Dimensions.width20 ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(Dimensions.radius20),
+                color: Colors.white
+              ),
+              child: Row(
+                children: [
+                  Icon(Icons.remove, color: AppColors.singColor,),
+                  SizedBox(width: Dimensions.width10/2,),
+                  BigText(text: "0"),
+                  SizedBox(width: Dimensions.width10/2,),
+                  Icon(Icons.add, color: AppColors.singColor,)
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(top: Dimensions.radius20, bottom: Dimensions.height20, left:Dimensions.width20, right: Dimensions.width20 ),
+              child: BigText(text: "\$10 | Add to cart", color: Colors.white,),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(Dimensions.radius20),
+                color: AppColors.mainColor
+              ),
+            ),
+          ],
+        ),
+
+      ),
+
     );
   }
 }
