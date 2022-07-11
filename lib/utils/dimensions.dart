@@ -26,7 +26,9 @@ class Dimensions {
   static double width30 = screenHeight/28.13;
 
 
+  //alturas das fontes
   static double font20 = screenHeight/42.2;
+  static double font26 = screenHeight/32.46;
 
   // aqui torno responsivo o raio das bordas do codigo
   static double radius15 = screenHeight/56.27;
@@ -54,4 +56,4 @@ class Dimensions {
 
 // Dimensoes da tela popular_food_detail
 
-// parei no tempo 3:25:28
+// parei no tempo 3:41:25
