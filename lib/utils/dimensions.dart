@@ -36,18 +36,22 @@ class Dimensions {
   //tamanho do icone de pesquisa (search)
 
   static double iconSize24 = screenHeight/35.17;
+  static double iconSize16 = screenHeight/52.75;
 
   // tamanhos do listview - 390 largura do iphone 12
   
   static double listViewImgSize = screenWidth/3.25;
   static double listViewTextContSize = screenWidth/3.9;
 
-
-  // Dimensoes da tela popular_food_detail
   
+  
+  
+  // Dimensoes da tela popular_food_detail
+  static double popolarFoodImgSize = screenHeight/2.41;
+
 
 }
 
 // Dimensoes da tela popular_food_detail
 
-// parei no tempo 3:17:56 
+// parei no tempo 3:25:28
