@@ -25,8 +25,8 @@ class Dimensions {
   static double width20 = screenHeight/42.2;
   static double width30 = screenHeight/28.13;
 
-
   //alturas das fontes
+  static double font16 = screenHeight/52.75;
   static double font20 = screenHeight/42.2;
   static double font26 = screenHeight/32.46;
 
@@ -36,24 +36,22 @@ class Dimensions {
   static double radius30 = screenHeight/28.13;
 
   //tamanho do icone de pesquisa (search)
-
   static double iconSize24 = screenHeight/35.17;
   static double iconSize16 = screenHeight/52.75;
 
-  // tamanhos do listview - 390 largura do iphone 12
-  
+  // tamanhos do listview - 390 largura do iphone 12  
   static double listViewImgSize = screenWidth/3.25;
-  static double listViewTextContSize = screenWidth/3.9;
-
-  
-  
+  static double listViewTextContSize = screenWidth/3.9;  
   
   // Dimensoes da tela popular_food_detail
   static double popolarFoodImgSize = screenHeight/2.41;
+
+  //altura dos botoes 844 / 120
+  static double bottomHeightBar = screenHeight/7.03;
 
 
 }
 
 // Dimensoes da tela popular_food_detail
 
-// parei no tempo 3:41:25
+// parei no tempo 4:03:52
