@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // home: const MainFoodPage(),
-      //home: const PopularFoodDetail(),
+      // home: const PopularFoodDetail(),
       home: const RecommenededFoodDetail(),
     );
   }
