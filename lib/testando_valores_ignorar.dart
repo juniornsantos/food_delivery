@@ -1,5 +1,5 @@
 void main (){
-  var myMap={
+  var myMap= {
     "name":"Junior",
     "age":25,
     "city":"Pereiro",
