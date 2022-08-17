@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/controllers/popular_product_controller.dart';
 import 'package:food_delivery/pages/food/popular_food_detail.dart';
 import 'package:food_delivery/pages/food/recommended_food_detail.dart';
+import 'package:food_delivery/pages/home/food_page_body.dart';
 import 'package:food_delivery/pages/home/main_food_page.dart';
 import 'package:get/get.dart';
 
@@ -26,7 +27,9 @@ class MyApp extends StatelessWidget {
       ),
       // home: const MainFoodPage(),
       // home: const PopularFoodDetail(),
-      home: const RecommenededFoodDetail(),
+      // home: const RecommenededFoodDetail(),
+      home: MainFoodPage(),
+
     );
   }
 }
