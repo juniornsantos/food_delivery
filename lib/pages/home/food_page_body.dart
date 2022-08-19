@@ -2,6 +2,8 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery/controllers/popular_product_controller.dart';
+import 'package:food_delivery/models/product_model.dart';
+import 'package:food_delivery/utils/app_constants.dart';
 import 'package:food_delivery/utils/colors.dart';
 import 'package:food_delivery/utils/dimensions.dart';
 import 'package:food_delivery/widgets/app_column.dart';
@@ -55,7 +57,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               controller: pageController,
               itemCount: popularProducts.popularProductList.length,
               itemBuilder: (context, position){
-              return _buildPageItem(position);
+              return _buildPageItem(position, popularProducts.popularProductList[position]);
             }),
           );
         }),
@@ -198,7 +200,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
 
 
 
-  Widget _buildPageItem (int index){
+  Widget _buildPageItem (int index, ProductModel popularProduct){
     //trabalhando o zoom usando a funcao intstate
     Matrix4 matrix = new Matrix4.identity();
     if (index == _currPageValue.floor()){
@@ -235,9 +237,9 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               color: index.isEven?Color(0xFF69c5df):Color(0xFF9294cc),
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: AssetImage(
-                  "assets/image/food2.png"
-                )
+                image: NetworkImage(AppConstants.BASE_URL +
+                      AppConstants.UPLOAD_URL +
+                      popularProduct.img!),
               )
             ),
           ),
@@ -267,7 +269,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               ),
               child: Container(
                 padding: EdgeInsets.only(top: Dimensions.height15, left: 15, right: 15),
-                child: AppColumn(text: "Comida Chinesa",)
+                child: AppColumn(text: popularProduct.name!),
               ),
 
             ),
