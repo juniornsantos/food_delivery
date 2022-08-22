@@ -50,7 +50,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
 
         //seção dos slidrs principais
         GetBuilder<PopularProductController>(builder: (popularProducts){
-          return Container(
+          return popularProducts.isLoaded?Container(
           // color: Colors.red,
             height: Dimensions.pageView,
             child: PageView.builder(
@@ -59,6 +59,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               itemBuilder: (context, position){
               return _buildPageItem(position, popularProducts.popularProductList[position]);
             }),
+          ):CircularProgressIndicator(
+            color: AppColors.mainColor,
           );
         }),
 
@@ -92,7 +94,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              BigText(text: "Popular"), 
+              BigText(text: "Recomendados"), 
               SizedBox(width: Dimensions.width10,),
               Container(
                 //deixando o ponto quase no centro dos dois textos
