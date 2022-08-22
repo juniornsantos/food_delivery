@@ -2,6 +2,7 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery/controllers/popular_product_controller.dart';
+import 'package:food_delivery/controllers/recommended_product_controller.dart';
 import 'package:food_delivery/models/product_model.dart';
 import 'package:food_delivery/utils/app_constants.dart';
 import 'package:food_delivery/utils/colors.dart';
@@ -115,10 +116,12 @@ class _FoodPageBodyState extends State<FoodPageBody> {
         
         //Lista com as cominas e mas imagens
           // height: 900,
+        GetBuilder<RecommendedProductController>(builder: (recomendedProduct){
+          return recomendedProduct.isLoaded?
           ListView.builder(
             physics:NeverScrollableScrollPhysics(),
             shrinkWrap: true,
-            itemCount:10 ,
+            itemCount:recomendedProduct.recommendedProductList.length,
             itemBuilder: (context, index){
               return Container(
                 margin: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20, bottom: Dimensions.width10),
@@ -133,8 +136,10 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                         color: Colors.white38,
                         image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: AssetImage(
-                            "assets/image/food2.png"
+                          image: NetworkImage(
+                            AppConstants.BASE_URL +
+                            AppConstants.UPLOAD_URL +
+                            recomendedProduct.recommendedProductList[index].img!
                           )
                         )
                       ),
@@ -158,7 +163,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              BigText(text: "Nutrition fruit meal in China"),
+                              BigText(text: recomendedProduct.recommendedProductList[index].name!),
                               SizedBox(height: Dimensions.height10,),
                               SmallText(text: "With Chinese Characteristics"),
                               SizedBox(height: Dimensions.height10,),
@@ -193,8 +198,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                 ),
 
               );
-
-          }),
+          }):CircularProgressIndicator(color: AppColors.mainColor,);
+        })
 
       ],
     );
@@ -239,9 +244,11 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               color: index.isEven?Color(0xFF69c5df):Color(0xFF9294cc),
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: NetworkImage(AppConstants.BASE_URL +
-                      AppConstants.UPLOAD_URL +
-                      popularProduct.img!),
+                image: NetworkImage(
+                  AppConstants.BASE_URL +
+                  AppConstants.UPLOAD_URL +
+                  popularProduct.img!
+                )
               )
             ),
           ),
