@@ -54,4 +54,4 @@ class Dimensions {
 
 // Dimensoes da tela popular_food_detail
 
-// parei no tempo 7:52:54
+// parei no tempo 8:02:07
