@@ -5,12 +5,14 @@ import 'package:get/get.dart';
 class RouteHelper{
   static const String initial="/";
   static const String popularFood="/popular-food";
+  static const String recommendedFood="/recommended-food";
 
+  static String getInitial()=>'$initial';
   static String getPopularFood()=>'$popularFood';
 
 
   static List<GetPage> routes=[
-    GetPage(name: "/", page: ()=>MainFoodPage()),
+    GetPage(name: initial, page: ()=>MainFoodPage()),
 
     GetPage(name:popularFood, page:(){
       print("Coletado a pagina food_pag");
