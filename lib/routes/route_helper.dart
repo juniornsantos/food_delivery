@@ -1,4 +1,5 @@
 import 'package:food_delivery/pages/food/popular_food_detail.dart';
+import 'package:food_delivery/pages/food/recommended_food_detail.dart';
 import 'package:food_delivery/pages/home/main_food_page.dart';
 import 'package:get/get.dart';
 
@@ -9,6 +10,7 @@ class RouteHelper{
 
   static String getInitial()=>'$initial';
   static String getPopularFood()=>'$popularFood';
+  static String getRecommendedFood()=>'$recommendedFood';
 
 
   static List<GetPage> routes=[
@@ -21,5 +23,14 @@ class RouteHelper{
     transition: Transition.fadeIn
     
     ),
+
+    GetPage(name:recommendedFood, page:(){
+      print("Coletado a pagina food_pag");
+      return RecommendedFoodDetail();
+    },
+    transition: Transition.fadeIn
+    
+    )
+    
   ];
 }
